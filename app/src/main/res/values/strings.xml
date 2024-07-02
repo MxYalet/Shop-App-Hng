@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Simple shopping app</string>
+    <string name="products">Products</string>
+    <string name="checkout">Checkout</string>
+</resources>
