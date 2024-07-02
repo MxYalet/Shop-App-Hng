@@ -4,6 +4,7 @@ package com.example.simpleshoppingapp
 import android.content.Intent
 import android.os.Bundle
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayout
 
@@ -45,6 +46,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun addToCart(name: String, imageResId: Int, price: String) {
         Cart.addItem(CartItem(name, imageResId, price))
+        Toast.makeText(this, "$name added to cart", Toast.LENGTH_SHORT).show()
+
     }
 }
 

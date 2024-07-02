@@ -3,6 +3,7 @@ package com.example.simpleshoppingapp
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.view.MenuItem
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.ImageView
@@ -13,6 +14,8 @@ class CartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val cartItemsLayout: LinearLayout = findViewById(R.id.cartItemsLayout)
         val cartItems = Cart.getItems()
@@ -40,12 +43,22 @@ class CartActivity : AppCompatActivity() {
         findViewById<TabLayout>(R.id.bottomTab).addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 if (tab.position == 0) {
-                    startActivity(Intent(this@CartActivity, MainActivity::class.java))
+                    finish() // Finish the current activity to go back to MainActivity
                 }
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab) {}
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish() // Finish the current activity to go back to MainActivity
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
