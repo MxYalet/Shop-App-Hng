@@ -43,7 +43,7 @@ class CartActivity : AppCompatActivity() {
         findViewById<TabLayout>(R.id.bottomTab).addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 if (tab.position == 0) {
-                    finish() // Finish the current activity to go back to MainActivity
+                    finish()
                 }
             }
 
@@ -55,7 +55,7 @@ class CartActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
-                finish() // Finish the current activity to go back to MainActivity
+                finish()
                 true
             }
             else -> super.onOptionsItemSelected(item)

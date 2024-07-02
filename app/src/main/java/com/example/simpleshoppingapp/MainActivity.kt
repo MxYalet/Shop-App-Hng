@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Add product click listeners
         findViewById<LinearLayout>(R.id.product1).setOnClickListener {
             addToCart("Product 1", R.drawable.shoes1, "Price: $10")
         }
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<TabLayout>(R.id.bottomTab).addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
-                if (tab.position == 1) { // Assuming the cart tab is at position 1
+                if (tab.position == 1) {
                     startActivity(Intent(this@MainActivity, CartActivity::class.java))
                 }
             }
