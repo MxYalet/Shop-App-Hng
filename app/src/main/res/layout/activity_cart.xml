@@ -6,19 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".CartActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
         <LinearLayout
             android:id="@+id/cartItemsLayout"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
         </LinearLayout>
 
-    </ScrollView>
+        <Button
+            android:id="@+id/checkoutButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/bottomTab"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginBottom="40dp"
+            android:text="Checkout" />
+
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/bottomTab"

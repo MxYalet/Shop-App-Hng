@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.ImageView
@@ -38,6 +39,11 @@ class CartActivity : AppCompatActivity() {
             }
 
             cartItemsLayout.addView(itemView)
+        }
+
+        val checkoutButton: Button = findViewById(R.id.checkoutButton)
+        checkoutButton.setOnClickListener {
+            startActivity(Intent(this@CartActivity, SuccessfulActivity::class.java))
         }
 
         findViewById<TabLayout>(R.id.bottomTab).addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
